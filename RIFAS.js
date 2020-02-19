@@ -42,7 +42,7 @@ rifas = {
     r34: 2,
     r35: 2,
     r36: 2,
-    r37: 1, //Aline Christina
+    r37: 1, //Aline Christina 
     r38: 2,
     r39: 2,
     r40: 2,
