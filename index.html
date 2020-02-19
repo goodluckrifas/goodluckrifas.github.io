@@ -43,7 +43,7 @@
 
 		<!-- Two -->
 <style>
-	.vendida {
+.vendida {
   background-color: #53A2E5;
   border: none;
   color: white;
@@ -57,6 +57,18 @@
 }
 .avenda {
   background-color: #6ABEC0;
+  border: none;
+  color: white;
+  padding: 6px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.reservada {
+  background-color: #F8CD6E;
   border: none;
   color: white;
   padding: 6px 10px;
@@ -92,12 +104,13 @@
 			var num_rifa = "";
 			var vendidas = 0;
 			var a_venda = 0;
+			var reservada = 0;
 
 			var x = -1;
 			while (x < total_rifas){
 				x++;
 
-				if (rifas["r" + x] == true){
+				if (rifas["r" + x] == 1){
 					vendidas++;
 					
 					if (x<10){
@@ -108,7 +121,7 @@
 						num_rifa += '<a href="#two" onClick="alert(`Ops, este número já foi vendido!`)" class="vendida">' + x + '</a>';
 					}
 
-				}else {
+				}else if (rifas["r" + x] == 2){
 					a_venda++;
 					
 					if (x<10){
@@ -117,6 +130,17 @@
 						num_rifa += '<a target="_blank" href="https://api.whatsapp.com/send?phone=55+11974733703&text=Olá, gostaria de efetuar a compra da rifa de número: ' + x + ' " class="avenda">0' + x + '</a>';
 					}else {
 						num_rifa += '<a target="_blank" href="https://api.whatsapp.com/send?phone=55+11974733703&text=Olá, gostaria de efetuar a compra da rifa de número: ' + x + ' " class="avenda">' + x + '</a>';
+					}
+
+				}else if (rifas["r" + x] == 3){
+					reservada++;
+					
+					if (x<10){
+						num_rifa += '<a href="#two" onClick="alert(`Ops, este número já foi reservado!`)" class="reservada">00' + x + '</a>';
+					}else if (x<100){
+						num_rifa += '<a href="#two" onClick="alert(`Ops, este número já foi reservado!`)" class="reservada">0' + x + '</a>';
+					}else {
+						num_rifa += '<a href="#two" onClick="alert(`Ops, este número já foi reservado!`)" class="reservada">' + x + '</a>';
 					}
 					
 				}
@@ -130,18 +154,21 @@
 				data: {
 					datasets: [{
 						data: [
-							vendidas,
 							a_venda,
+							vendidas,
+							reservada,
 						],
 						backgroundColor: [
-							window.chartColors.blue,
 							window.chartColors.green,
+							window.chartColors.blue,
+							window.chartColors.yellow,
 						],
 						label: 'Rifas'
 					}],
 					labels: [
-						'Vendidas',
-						'À Venda'
+						'Disponível',
+						'Vendido',
+						'Reservado'
 					]
 				},
 				options: {
