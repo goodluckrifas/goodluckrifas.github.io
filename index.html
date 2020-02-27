@@ -5,6 +5,8 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/rifa.css" />
+		<link rel="stylesheet" href="assets/css/slide.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<script src="https://www.chartjs.org/dist/2.9.3/Chart.min.js"></script>
 	  	<script src="https://www.chartjs.org/samples/latest/utils.js"></script>
@@ -35,52 +37,47 @@
 							<p><strong>Valor:</strong> R$ 30<br><strong>PROMOÇÃO:</strong> A partir de duas cotas: <strong>R$ 25 cada!!</strong><br><strong>Quantidade de números:</strong> 200 (000 à 199)</p>
 						</div>
 						<div class="col-6 col-12-medium imp-medium">
-							<span class="image fit"><img src="images/produto.jpg" alt="" /></span>
+							<!-- Image Open Slideshow -->
+							<span class="image fit">
+								<img src="images/produto1.jpg" style="max-width: 100%; max-height: 270px; object-fit: contain; border: groove; background-color: white;" onclick="openModal();currentSlide(1)" class="hover-shadow cursor" alt="" /> Clique para ver mais fotos!
+							</span>
+
+							<!-- Slideshow Modal -->
+							<div id="myModal" class="modal">
+							<span class="close cursor" onclick="closeModal()">&times;</span>
+							<div class="modal-content">
+
+								<div class="mySlides">
+								<div class="numbertext">1 / 4</div>
+								<img src="images/produto1.jpg">
+								</div>
+
+								<div class="mySlides">
+								<div class="numbertext">2 / 4</div>
+								<img src="images/produto2.jpg">
+								</div>
+
+								<div class="mySlides">
+								<div class="numbertext">3 / 4</div>
+								<img src="images/produto3.jpg">
+								</div>
+
+								<div class="mySlides">
+								<div class="numbertext">4 / 4</div>
+								<img src="images/produto4.jpg">
+								</div>
+
+								<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+								<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+							</div>
+							</div>
 						</div>
 					</div>
 				</div>
 			</section>
 
 		<!-- Two -->
-<style>
-.vendida {
-  background-color: #53A2E5;
-  border: none;
-  color: white;
-  padding: 6px 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-}
-.avenda {
-  background-color: #6ABEC0;
-  border: none;
-  color: white;
-  padding: 6px 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-}
-.reservada {
-  background-color: #F8CD6E;
-  border: none;
-  color: white;
-  padding: 6px 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-}
-</style>
-
 		<section id="two" class="main style2">
 			<div class="container">
 				<div class="row gtr-150">
@@ -98,92 +95,6 @@
 				</div>
 			</div>
 		</section>
-
-		<script>
-
-			var num_rifa = "";
-			var vendidas = 0;
-			var a_venda = 0;
-			var reservada = 0;
-
-			var x = -1;
-			while (x < total_rifas){
-				x++;
-
-				if (rifas["r" + x] == 1){
-					vendidas++;
-					
-					if (x<10){
-						num_rifa += '<a href="#two" onClick="alert(`Ops, este número já foi vendido!`)" class="vendida">00' + x + '</a>';
-					}else if (x<100){
-						num_rifa += '<a href="#two" onClick="alert(`Ops, este número já foi vendido!`)" class="vendida">0' + x + '</a>';
-					}else {
-						num_rifa += '<a href="#two" onClick="alert(`Ops, este número já foi vendido!`)" class="vendida">' + x + '</a>';
-					}
-
-				}else if (rifas["r" + x] == 2){
-					a_venda++;
-					
-					if (x<10){
-						num_rifa += '<a target="_blank" href="https://api.whatsapp.com/send?phone=55+11974733703&text=Olá, gostaria de efetuar a compra da rifa de número: ' + x + ' " class="avenda">00' + x + '</a>';
-					}else if (x<100){
-						num_rifa += '<a target="_blank" href="https://api.whatsapp.com/send?phone=55+11974733703&text=Olá, gostaria de efetuar a compra da rifa de número: ' + x + ' " class="avenda">0' + x + '</a>';
-					}else {
-						num_rifa += '<a target="_blank" href="https://api.whatsapp.com/send?phone=55+11974733703&text=Olá, gostaria de efetuar a compra da rifa de número: ' + x + ' " class="avenda">' + x + '</a>';
-					}
-
-				}else if (rifas["r" + x] == 3){
-					reservada++;
-					
-					if (x<10){
-						num_rifa += '<a href="#two" onClick="alert(`Ops, este número já foi reservado!`)" class="reservada">00' + x + '</a>';
-					}else if (x<100){
-						num_rifa += '<a href="#two" onClick="alert(`Ops, este número já foi reservado!`)" class="reservada">0' + x + '</a>';
-					}else {
-						num_rifa += '<a href="#two" onClick="alert(`Ops, este número já foi reservado!`)" class="reservada">' + x + '</a>';
-					}
-					
-				}
-
-			}
-
-			document.getElementById("numeros_rifa").innerHTML = num_rifa;
-
-			var config = {
-				type: 'pie',
-				data: {
-					datasets: [{
-						data: [
-							a_venda,
-							vendidas,
-							reservada,
-						],
-						backgroundColor: [
-							window.chartColors.green,
-							window.chartColors.blue,
-							window.chartColors.yellow,
-						],
-						label: 'Rifas'
-					}],
-					labels: [
-						'Disponível',
-						'Vendido',
-						'Reservado'
-					]
-				},
-				options: {
-					responsive: false
-				}
-			};
-		
-			window.onload = function() {
-				var ctx = document.getElementById('chart-area').getContext('2d');
-				window.myPie = new Chart(ctx, config);
-			};
-		
-			var colorNames = Object.keys(window.chartColors);
-			
-		</script>
 
 		<!-- Three -->
 			<section id="three" class="main style1 special">
@@ -269,6 +180,8 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/slide.js"></script>
+			<script src="assets/js/rifa.js"></script>
 
 	</body>
 </html>
