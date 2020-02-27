@@ -23,7 +23,7 @@ rifas = {
     r15: 2,
     r16: 3, //Lorena SL
     r17: 3, //f
-    r18: 2,
+    r18: 3, //Nilcelia Almeida
     r19: 2,
     r20: 2,
     r21: 2,
@@ -154,7 +154,7 @@ rifas = {
     r146: 2,
     r147: 2,
     r148: 2,
-    r149: 2,
+    r149: 3, //Nilcelia Almeida
     r150: 2,
     r151: 2,
     r152: 2,
