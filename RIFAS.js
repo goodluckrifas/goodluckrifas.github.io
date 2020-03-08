@@ -74,7 +74,7 @@ rifas = {
     r66: 1, //Tamara SL
     r67: 2,
     r68: 2,
-    r69: 2,
+    r69: 3, //(22)99775-6409 Bruno Eduardo
     r70: 2,
     r71: 1, //(41)9535-0450 Alex Furtado de Souza
     r72: 2,
@@ -84,7 +84,7 @@ rifas = {
     r76: 3, //(21)999576557 Renato Sales
     r77: 2,
     r78: 2,
-    r79: 2,
+    r79: 3, //(22)99775-6409 Bruno Eduardo
     r80: 2,
     r81: 2,
     r82: 2,
@@ -174,7 +174,7 @@ rifas = {
     r166: 1, //Giovanna de Almeida Pereira
     r167: 2,
     r168: 2,
-    r169: 2,
+    r169: 3, //(22)99775-6409 Bruno Eduardo
     r170: 2,
     r171: 2,
     r172: 3, //Luis SL
@@ -184,7 +184,7 @@ rifas = {
     r176: 2,
     r177: 2,
     r178: 2,
-    r179: 2,
+    r179: 3, //(22)99775-6409 Bruno Eduardo
     r180: 2,
     r181: 2,
     r182: 2,
