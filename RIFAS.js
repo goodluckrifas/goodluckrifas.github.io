@@ -12,7 +12,7 @@ rifas = {
     r4: 3, //f
     r5: 2,
     r6: 2,
-    r7: 2,
+    r7: 3, //(91)8216-2398 Flavio Santos
     r8: 2,
     r9: 3, //(37)9837-2904
     r10: 3, //(85)9712-7668 Wesley Costa
@@ -182,7 +182,7 @@ rifas = {
     r174: 2,
     r175: 1, //Priscila de Almeida Pereira
     r176: 2,
-    r177: 2,
+    r177: 3, //(91)8216-2398 Flavio Santos
     r178: 2,
     r179: 3, //(22)99775-6409 Bruno Eduardo
     r180: 2,
