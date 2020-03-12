@@ -72,7 +72,7 @@ rifas = {
     r64: 2,
     r65: 2,
     r66: 1, //Tamara SL
-    r67: 2,
+    r67: 3, //(19)99170-5721 Geovanni
     r68: 2,
     r69: 3, //(22)99775-6409 Bruno Eduardo
     r70: 2,
